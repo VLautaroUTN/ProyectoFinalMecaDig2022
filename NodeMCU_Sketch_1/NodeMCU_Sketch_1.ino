@@ -9,7 +9,6 @@ void setup(void) {
 void loop(void) {  // Puedo definir una funcion que haga todo el control de la temperatura
   byte i;
   byte present = 0;
-  byte type_s = 0;
   byte data[9];
   byte addr[8];
   float celsius;
@@ -56,7 +55,7 @@ void loop(void) {  // Puedo definir una funcion que haga todo el control de la t
   celsius = (float)raw / 16.0;
   Serial.print("Temperature = ");
   Serial.print(celsius);
-  Serial.print(" Celsius ");
-  Serial.println("");
+  Serial.print(" ºC");
+  Serial.println(" ");
   delay(5000);
 }

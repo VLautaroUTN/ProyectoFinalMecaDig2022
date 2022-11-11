@@ -7,3 +7,6 @@ https://www.luisllamas.es/como-usar-mqtt-asincrono-en-el-esp8266-esp32-con-async
 
 ## CÓMO USAR MQTT Y JSON EN EL ESP8266 O ESP32
 https://www.luisllamas.es/como-usar-mqtt-y-json-en-el-esp32/
+
+## serializeJson()
+https://arduinojson.org/v6/api/json/serializejson/
