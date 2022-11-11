@@ -10,3 +10,6 @@ https://www.luisllamas.es/como-usar-mqtt-y-json-en-el-esp32/
 
 ## serializeJson()
 https://arduinojson.org/v6/api/json/serializejson/
+
+## NodeMCU tutorial paso a paso desde cero
+https://programarfacil.com/podcast/nodemcu-tutorial-paso-a-paso/
