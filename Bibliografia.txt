@@ -1,0 +1,6 @@
+Blink Documentation: WiFi provisioning
+https://docs.blynk.io/en/getting-started/activating-devices/blynk-edgent-wifi-provisioning
+
+WiFi credentials stored in EEPROM | Better than Smart Config | ESP8266 projects | LCSC | SBU. Techiesms.
+https://www.youtube.com/watch?v=ktL5U0dQtn8
+
