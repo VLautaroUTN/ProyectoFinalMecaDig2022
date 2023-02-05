@@ -14,22 +14,21 @@ BlynkTimer temporizador;
 OneWire ourWire(D1); //pin de datos del DS18B20
 DallasTemperature sensorTemp(&ourWire); //Declaracion de un objeto
 //para el sensor, inicializa en void Setup
-float temperatura;
-String Datos;
-int HeaterStatus = 0;
-
+String temperatura;
+float datos;
+int calentadorEstado = 0;
+int
 
 
 // ---------------------- Funciones propias: ----------------------
-void enviarTemperatura(){
-  Blynk.virtualWrite(V0, Datos);
-  Blynk.virtualWrite(V1, HeaterStatus);
+void enviarDatos(){
+  Blynk.virtualWrite(V0, temperatura);
   }
 
 void medirTemperatura(){
   sensorTemp.requestTemperatures(); //Se envia el comando para leer la temperatura
-  temperatura = sensorTemp.getTempCByIndex(0); //Se obtiene la temperatura en °C
-  Datos = String(temperatura) + " °C";
+  datos = sensorTemp.getTempCByIndex(0); //Se obtiene la temperatura en °C
+  temperatura = String(datos) + " °C";
   }
 
 //void btn_alimentar(){}
@@ -45,13 +44,14 @@ void setup(){
   sensorTemp.begin(); //sensor de temperatura inicializado
   BlynkEdgent.begin();
 
-  temporizador.setInterval(1000L, enviarTemperatura);
+  temporizador.setInterval(1000L, enviarDatos);
 }
 
 void loop(){
   BlynkEdgent.run();
   temporizador.run();
   medirTemperatura();
-  if (HeaterStatus == 0){HeaterStatus = 1;}
-  else{HeaterStatus = 0;}
+
+BLINK_WRITE(V3){
+
 }
