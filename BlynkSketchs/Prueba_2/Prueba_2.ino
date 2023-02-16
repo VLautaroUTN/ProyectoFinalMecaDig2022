@@ -16,6 +16,9 @@
 OneWire ourWire(D1); //pin de datos del DS18B20
 int pinLuces = D2;
 int fotocelula = D5;
+int pinMotor;
+int pinSComida;
+int ledComida;
 // >> PINES  <<
 
 BlynkTimer temporizador;
@@ -24,12 +27,17 @@ String Temperatura;
 float Datos;
 int calentadorEstado = 0;
 int lightControl = 0;
+int ciclos;
+int cantCiclos = 10000;
+int tiempoAlimento;
+int comida;
 
 
 // ---------------------- Funciones propias: ----------------------
 void enviarDatos(){
   Blynk.virtualWrite(V0, Temperatura);
   Blynk.virtualWrite(V1, calentadorEstado);
+  Blynk.virtualWrite(V5, comida)
   }
 
 void medirTemperatura(){
@@ -38,9 +46,19 @@ void medirTemperatura(){
   Temperatura = String(Datos) + " °C";
   }
 
-//void btn_alimentar(){}
-
-//void btn_luzAuto(){}
+void dispenarComida(){
+  comida = digitalRead(pinSComida);
+  if (comida == 1){
+    digitalWrite(ledComida, LOW);
+    digitalWrite(pinMotor, HIGH);
+    delay(tiempoAlimento);
+    digitalWrite(pinMotor, LOW);
+  }
+  else{
+    digitalWrite(ledComida, HIGH);
+  }
+  ciclos = 0;
+}
 
 
 //  ---------------------- VOID SETUP ----------------------
@@ -52,7 +70,6 @@ void setup(){
   delay(100);
   sensorTemp.begin(); //sensor de temperatura inicializado
   BlynkEdgent.begin();
-
   temporizador.setInterval(1000L, enviarDatos);
 }
 
@@ -67,6 +84,10 @@ void loop(){
     int sensorOscuridad = digitalRead(fotocelula)
     digitalWrite(pinLuces, sensorOscuridad);
   }
+  if (ciclos >= cantCiclos){
+    dispenarComida();
+  }
+  ciclos += 1;
 }
 
 
@@ -83,4 +104,9 @@ BLYNK_WRITE(V2){
 //  Boton de modo manual (0) o modo automatico (1)
 BLYNK_WRITE(V3){
   lightControl = param.asInt();
+}
+
+//Boton Alimentar
+BLYNK_WRITE(V4){
+  dispenarComida();
 }
