@@ -14,11 +14,11 @@
 
 // << PINES  >>
 OneWire ourWire(D1); //pin de datos del DS18B20
-int pinLuces = D2;
-int fotocelula = D5;
-int pinMotor;
-int pinSComida;
-int ledComida;
+int pinLuces = D0;
+int fotocelula = D1;
+int pinMotor = D2;
+int pinSComida = D5;
+int ledComida = D6;
 // >> PINES  <<
 
 BlynkTimer temporizador;
