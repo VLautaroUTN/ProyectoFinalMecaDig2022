@@ -13,10 +13,11 @@
 // ---------------------- VARIABLES: ----------------------
 
 // << PINES  >>
-OneWire ourWire(D1); //pin de datos del DS18B20
-int pinLuces = D0;
-int fotocelula = D1;
-int pinMotor = D2;
+int pinSenTemp = D0;
+OneWire ourWire(pinSenTemp); //pin de datos del DS18B20
+int pinLuces = D1;
+int fotocelula = D2;
+int pinMotor = D4;
 int pinSComida = D5;
 int ledComida = D6;
 // >> PINES  <<
