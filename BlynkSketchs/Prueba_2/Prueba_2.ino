@@ -12,11 +12,11 @@
 
 // ---------------------- VARIABLES: ----------------------
 
-// << PINES  - NO OCUPAR D3>> 0,4, 5, 8
+// << PINES  - NO OCUPAR D3>> 0,4, 8
 // control comida 
 int pinSComida = D;
 int ledComida = D;
-int pinMotor = D;
+int pinMotor = D5; // --+++++ ok
 
 // control luces
 int pinLuces = D2; // Transistor --+++++ ok
