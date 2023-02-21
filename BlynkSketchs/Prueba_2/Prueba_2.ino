@@ -12,10 +12,10 @@
 
 // ---------------------- VARIABLES: ----------------------
 
-// << PINES  - NO OCUPAR D3>> 0,4, 8
+// << PINES  - NO OCUPAR D3>> DISPONIBLES: 0,4, 8
 // control comida 
 int pinSComida = D;
-int ledComida = D;
+int ledComida = D; // no se conectara porque el sensor controla directamente la luz de alerta
 int pinMotor = D5; // --+++++ ok
 
 // control luces
