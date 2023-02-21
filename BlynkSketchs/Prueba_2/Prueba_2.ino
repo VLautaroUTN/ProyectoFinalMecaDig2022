@@ -19,11 +19,11 @@ int ledComida = D6;
 int pinMotor = D4;
 
 // control luces
-int pinLuces = D2; // Transistor -- ok
+int pinLuces = D2; // Transistor --+++++ ok
 int fotocelula = D7;
 
 // control temperatura
-int pinSenTemp = D1; //-- ok
+int pinSenTemp = D1; //--+++++++ ok
 OneWire ourWire(pinSenTemp); //pin de datos del DS18B20
 int pinReleTemp = D?; // Transistor
 // >> PINES  <<
