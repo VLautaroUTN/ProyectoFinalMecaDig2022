@@ -16,7 +16,7 @@
 int pinSenTemp = D0;
 OneWire ourWire(pinSenTemp); //pin de datos del DS18B20
 int pinLuces = D1;
-int fotocelula = D2;
+int fotocelula = D7;
 int pinMotor = D4;
 int pinSComida = D5;
 int ledComida = D6;
