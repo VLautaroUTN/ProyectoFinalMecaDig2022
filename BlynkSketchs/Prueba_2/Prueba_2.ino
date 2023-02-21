@@ -13,19 +13,19 @@
 // ---------------------- VARIABLES: ----------------------
 
 // << PINES  >>
-// control comida
+// control comida 
 int pinSComida = D5;
 int ledComida = D6;
 int pinMotor = D4;
 
 // control luces
-int pinLuces = D1;
+int pinLuces = D2; // Transistor -- ok
 int fotocelula = D7;
 
 // control temperatura
-int pinSenTemp = D1; //ok
+int pinSenTemp = D1; //-- ok
 OneWire ourWire(pinSenTemp); //pin de datos del DS18B20
-int pinReleTemp = D?;
+int pinReleTemp = D?; // Transistor
 // >> PINES  <<
 
 BlynkTimer temporizador;
